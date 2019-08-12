@@ -30,7 +30,7 @@ export default class App extends React.Component {
   createItem  = (inputTextFromForm) => {
     let newId = this.state.startId
     newId++
-    
+
     this.setState({
       startId: newId
     })
@@ -43,6 +43,16 @@ export default class App extends React.Component {
       done: false
     }
   }
+
+  onDeleteItem = (IdOfItemToDelete) => {
+    const newData = [ ...this.state.appData]
+    const index = newData.findIndex(item => item.id === IdOfItemToDelete)
+
+    newData.splice(index, 1)
+    this.setState({
+      appData: newData
+    })
+  }
   
   render () {
     return (
@@ -53,6 +63,7 @@ export default class App extends React.Component {
             onItemAdded={this.onItemAdded} />
           <Columns 
             inputData = {this.state.appData}
+            onDelete = {this.onDeleteItem}
           />
         </div>
       </div>

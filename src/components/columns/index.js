@@ -10,6 +10,7 @@ const Columns = (props) => {
     <div className="app__columns">
       <StartColumn 
         inputData = {props.inputData}
+        onDelete = {props.onDelete}
       />
       <InProgressColumn />
       <DoneColumn />

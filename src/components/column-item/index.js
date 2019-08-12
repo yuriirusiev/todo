@@ -6,7 +6,6 @@ import ColumnItemButtons from '../column-item-buttons'
 import './index.scss'
 
 const ColumnItem = (props) => {
-  console.log(props)
   return (
     <div className="app__columns__column-item">
       <ColumnItemHeader 
@@ -17,9 +16,12 @@ const ColumnItem = (props) => {
         inputText = {props.inputText}
       />
       <ColumnItemButtons 
+        id= {props.id}
         inProgress = {props.inProgress}
         freeze = {props.freeze}
         done = {props.done}
+        onDelete = {props.onDelete}
+        itemId = {props.itemId}
       />
     </div>
   )

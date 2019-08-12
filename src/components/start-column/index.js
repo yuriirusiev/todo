@@ -14,13 +14,12 @@ const StartColumn = (props) => {
   const columnItems = props.inputData.map((item) => {
     const { ...itemProps } = item;
     return (
-      <div key={itemProps.id} className="list-group-item">
+      <div key={itemProps.id} className="app__columns__start-column__item__wrapper">
         <ColumnItem 
           { ...itemProps}
+          onDelete = {props.onDelete}
+          itemId = {itemProps.id}
         />
-        {/* onToggleImportant={ () => onToggleImportant(id) }
-        onToggleDone={ () => onToggleDone(id) }
-        onDelete={ () => onDelete(id) } /> */}
       </div>
     )
   })
