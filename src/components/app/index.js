@@ -13,14 +13,34 @@ export default class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      appData: [{
-        id: "",
-        inputText: "",
-        addingTime: "",
-        inProgress: false,
-        freeze: false,
-        done: false
-      }]
+      appData: [],
+      history: [],
+      startId: 0
+    }
+  }
+
+  onItemAdded = (inputTextFromForm) => {
+    const newItem = this.createItem(inputTextFromForm)
+
+    this.setState({    
+      appData: [...this.state.appData, newItem] 
+    })
+  }
+
+  createItem  = (inputTextFromForm) => {
+    let newId = this.state.startId
+    newId++
+    
+    this.setState({
+      startId: newId
+    })
+    return {
+      id: newId,
+      inputText: inputTextFromForm,
+      addingTime: (new Date()).toLocaleTimeString(),
+      inProgress: false,
+      freeze: false,
+      done: false
     }
   }
   
@@ -29,12 +49,10 @@ export default class App extends React.Component {
       <div className="app-wrapper">
         <div className="app">
           <MainHeader />
-          <MainForm 
-            //onSubmit = {this.handleSubmit} 
-            //onChange = {this.handleChange}
-          />
+          <MainForm
+            onItemAdded={this.onItemAdded} />
           <Columns 
-            //userText = {this.state.value} 
+            inputData = {this.state.appData}
           />
         </div>
       </div>

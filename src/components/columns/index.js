@@ -9,7 +9,7 @@ const Columns = (props) => {
   return (
     <div className="app__columns">
       <StartColumn 
-        //userText = {props.userText}
+        inputData = {props.inputData}
       />
       <InProgressColumn />
       <DoneColumn />

@@ -6,13 +6,21 @@ import ColumnItemButtons from '../column-item-buttons'
 import './index.scss'
 
 const ColumnItem = (props) => {
+  console.log(props)
   return (
     <div className="app__columns__column-item">
-      <ColumnItemHeader />
-      <ColumnItemInputText 
-        //userText = {props.userText}
+      <ColumnItemHeader 
+        id= {props.id}
+        addingTime = {props.addingTime}
       />
-      <ColumnItemButtons />
+      <ColumnItemInputText 
+        inputText = {props.inputText}
+      />
+      <ColumnItemButtons 
+        inProgress = {props.inProgress}
+        freeze = {props.freeze}
+        done = {props.done}
+      />
     </div>
   )
 }
