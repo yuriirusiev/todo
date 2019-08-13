@@ -13,12 +13,13 @@ const StartColumn = (props) => {
 
   const columnItems = props.inputData.map((item) => {
     const { ...itemProps } = item;
+    let itemClassname = "app__columns__start-column__item__" + itemProps.id + " start-column-item"
     return (
-      <div key={itemProps.id} className="app__columns__start-column__item__wrapper">
+      <div key={itemProps.id} className={itemClassname}>
         <ColumnItem 
           { ...itemProps}
           onDelete = {props.onDelete}
-          itemId = {itemProps.id}
+          onInProgressMove = {props.onInProgressMove}
         />
       </div>
     )

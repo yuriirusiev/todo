@@ -9,11 +9,18 @@ const Columns = (props) => {
   return (
     <div className="app__columns">
       <StartColumn 
-        inputData = {props.inputData}
-        onDelete = {props.onDelete}
+        inputData={props.inputData}
+        onDelete={props.onDelete}
+        onInProgressMove={props.onInProgressMove}
       />
-      <InProgressColumn />
-      <DoneColumn />
+      <InProgressColumn 
+        inProgressData={props.inProgressData}
+        onFreeze={props.onFreeze}
+        onDone={props.onDone}
+      />
+      <DoneColumn 
+        doneData={props.doneData}
+      />
     </div>
   )
 }

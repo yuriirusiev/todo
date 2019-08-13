@@ -7,7 +7,7 @@ import './index.scss'
 
 const ColumnItem = (props) => {
   return (
-    <div className="app__columns__column-item">
+    <div className="app__columns__column-item__inner">
       <ColumnItemHeader 
         id= {props.id}
         addingTime = {props.addingTime}
@@ -16,12 +16,14 @@ const ColumnItem = (props) => {
         inputText = {props.inputText}
       />
       <ColumnItemButtons 
-        id= {props.id}
-        inProgress = {props.inProgress}
-        freeze = {props.freeze}
-        done = {props.done}
-        onDelete = {props.onDelete}
-        itemId = {props.itemId}
+        id={props.id}
+        inProgress={props.inProgress}
+        freeze={props.freeze}
+        done={props.done}
+        onDelete={props.onDelete}
+        onInProgressMove={props.onInProgressMove}
+        onFreeze={props.onFreeze}
+        onDone={props.onDone}
       />
     </div>
   )
