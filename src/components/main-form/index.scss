@@ -1,8 +1,19 @@
-.app__main-form {
+.app__main-forn__wrapper {
   display: flex;
+}
+
+.app__main-form-input__wrapper {
+  align-self: center;
 }
 
 .app__main-form__button {
   height: 50%;
   margin: 0 0 0 10px;
+}
+
+.app__main-form__input-hint {
+  font-size: 12px;
+  color: #777;
+  padding: 5px 0 0;
+  margin: 0;
 }
